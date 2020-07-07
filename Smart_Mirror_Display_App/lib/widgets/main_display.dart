@@ -1,7 +1,9 @@
+import 'package:Smart_Mirror_Display_App/globals.dart';
 import 'package:Smart_Mirror_Display_App/widgets/tiles/generic_tile.dart';
 import 'package:Smart_Mirror_Display_App/widgets/tiles/image_tile.dart';
 import 'package:Smart_Mirror_Display_App/widgets/tiles/text_message_tile.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase/firebase.dart' as fb;
 
 // ===============================================================================================================================
 // ======================================= GenericTile Class =====================================================================
@@ -10,7 +12,6 @@ import 'package:flutter/material.dart';
 class MainDisplay extends StatefulWidget {
   /// The MainDisplay Class houses the main portion of the Smart_Mirror_Display_App. It provides the Scaffold & body.
   MainDisplay();
-
   @override
   _MainDisplayState createState() => _MainDisplayState();
 }
@@ -19,6 +20,13 @@ class _MainDisplayState extends State<MainDisplay> {
   // ======================================= Class Functions =====================================================================
   @override
   Widget build(BuildContext context) {
+    db.ref('User').once('value').then((value) {
+      var snap = value.snapshot;
+      var snapVal = snap.val().toString();
+      print(snapVal);
+    }).catchError((error) {
+      print(error);
+    });
     return Scaffold(
       body: Stack(
         // These children represent the list of tiles to display
