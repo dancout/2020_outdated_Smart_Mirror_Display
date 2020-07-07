@@ -20,6 +20,7 @@ class _MainDisplayState extends State<MainDisplay> {
   // ======================================= Class Functions =====================================================================
   @override
   Widget build(BuildContext context) {
+    // TODO: Move this code to a better resting place
     db.ref('User').once('value').then((value) {
       var snap = value.snapshot;
       var snapVal = snap.val().toString();
@@ -27,6 +28,7 @@ class _MainDisplayState extends State<MainDisplay> {
     }).catchError((error) {
       print(error);
     });
+    // TODO: Move this code to a better resting place
     return Scaffold(
       body: Stack(
         // These children represent the list of tiles to display
