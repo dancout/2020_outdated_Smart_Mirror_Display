@@ -1,3 +1,4 @@
+import 'package:Smart_Mirror_Display_App/firebase_app.dart';
 import 'package:firebase/firebase.dart' as fb;
 
 // ===============================================================================================================================
@@ -7,15 +8,7 @@ import 'package:firebase/firebase.dart' as fb;
 // ======================================= Class Variables =======================================================================
 
 // Initialize the Firebase DB to be used throughout the app
-fb.Database db = fb
-    .initializeApp(
-      apiKey: "AIzaSyCJofAvAmlZSEsnu2uk8kpQ1-IAXvb_ysc",
-      appId: "1:285844038893:web:b6853c1687b742e0b918e4",
-      authDomain: "smart-mirror-display-app.firebaseapp.com",
-      databaseURL: "https://smart-mirror-display-app.firebaseio.com",
-      measurementId: "G-SB7LSRKQSZ",
-      messagingSenderId: "285844038893",
-      projectId: "smart-mirror-display-app",
-      storageBucket: "smart-mirror-display-app.appspot.com",
-    )
-    .database();
+fb.Database db = firebaseApp.database();
+
+// NOTE: You will need to generate the [firebaseApp] object yourself in your own `firebase_app.dart` file.
+// This file contains sensitive information about your Firebase connection, and has been added to the .gitIgnore.

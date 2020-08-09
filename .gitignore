@@ -19,3 +19,7 @@ doc/api/
 *.js_
 *.js.deps
 *.js.map
+Smart_Mirror_Display_App/.firebase/hosting.YnVpbGRcd2Vi.cache
+Smart_Mirror_Display_App/.firebaserc
+Smart_Mirror_Display_App/firebase.json
+Smart_Mirror_Display_App/lib/firebase_app.dart
